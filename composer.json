@@ -1,40 +1,42 @@
 {
-    "name": "league/:package_name",
-    "description": ":package_description",
+    "name": "eddiezane/tinyhttp",
+    "version": "0.1.0",
+    "description": "A tiny HTTP library",
     "keywords": [
-        "league",
-        ":package_name"
+        "tiny",
+        "http",
+        "curl"
     ],
-    "homepage": "https://github.com/thephpleague/:package_name",
-    "license": "MIT",
+    "homepage": "https://github.com/eddiezane/tinyhttp",
+    "license": "BSD",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
-            "homepage": ":author_website",
-            "role": "Developer"
+            "name": "Neuman Vong",
+            "email": "neuman@ashmoremusic.com"
+        },
+        {
+            "name": "Twilio"
+        },
+        {
+            "name": "Eddie Zaneski",
+            "email": "eddiezane@gmail.com"
         }
     ],
     "require": {
-        "php" : ">=5.3.0"
+        "php" : ">=5.3.0",
+        "mockery/mockery": "~0.9"
     },
     "require-dev": {
-        "phpunit/phpunit" : "4.*",
-        "scrutinizer/ocular": "~1.1"
+        "phpunit/phpunit" : "4.*"
     },
     "autoload": {
         "psr-4": {
-            "League\\Skeleton\\": "src"
+            "eddiezane\\TinyHttp\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "League\\Skeleton\\Test\\": "tests"
-        }
-    },
-    "extra": {
-        "branch-alias": {
-            "dev-master": "1.0-dev"
+            "eddiezane\\TinyHttp\\Test\\": "tests"
         }
     }
 }
