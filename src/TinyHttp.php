@@ -64,7 +64,7 @@ class TinyHttp
       CURLOPT_TIMEOUT => 60,
     );
 
-    foreach ($req_headers as $k => $v) {
+    foreach ((array)$req_headers as $k => $v) {
       $opts[CURLOPT_HTTPHEADER][] = "$k: $v";
     }
     if ($this->port) {
@@ -110,7 +110,6 @@ class TinyHttp
     try {
       if ($curl = curl_init()) {
         if (curl_setopt_array($curl, $opts)) {
-          print_r($opts);
           if ($response = curl_exec($curl)) {
             $parts = explode("\r\n\r\n", $response, 3);
             list($head, $body) = ($parts[0] == 'HTTP/1.1 100 Continue') ? array($parts[1], $parts[2]) : array($parts[0], $parts[1]);
