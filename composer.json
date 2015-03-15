@@ -30,8 +30,8 @@
         "mockery/mockery": "~0.9"
     },
     "autoload": {
-        "psr-4": {
-            "eddiezane\\TinyHttp\\": "src"
+        "psr-0": {
+            "TinyHttp": "src"
         }
     },
     "autoload-dev": {
