@@ -30,9 +30,7 @@
         "mockery/mockery": "~0.9"
     },
     "autoload": {
-        "psr-0": {
-            "TinyHttp": "src"
-        }
+        "classmap": ["src/TinyHttp.php"]
     },
     "autoload-dev": {
         "psr-4": {
