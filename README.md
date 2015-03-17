@@ -27,7 +27,6 @@ $ ./vendor/bin/phpunit
 ```
 
 ## Todo
-- Move the authenticate into the options param
 - Improve README usage
 - Write tests
 

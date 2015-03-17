@@ -33,6 +33,8 @@ class TinyHttpException extends \ErrorException {}
  */
 class TinyHttp
 {
+  const VERSION = '0.1.0';
+
   var $user, $pass, $scheme, $host, $port, $debug, $curlopts;
 
   public function __construct($uri = '', $kwargs = array())
@@ -42,6 +44,11 @@ class TinyHttp
     }
     $this->debug = isset($kwargs['debug']) ? !!$kwargs['debug'] : null;
     $this->curlopts = isset($kwargs['curlopts']) ? $kwargs['curlopts'] : array();
+
+    if (isset($kwargs['auth'])) {
+      $this->user = $kwargs['auth']['user'];
+      $this->pass = isset($kwargs['auth']['pass']) ? $kwargs['auth']['pass'] : '';
+    }
   }
 
   public function __call($name, $args)
@@ -73,7 +80,7 @@ class TinyHttp
     if ($this->debug) {
       $opts[CURLINFO_HEADER_OUT] = true;
     }
-    if ($this->user && $this->pass) {
+    if ($this->user || $this->pass) {
       $opts[CURLOPT_USERPWD] = "$this->user:$this->pass";
     }
     switch ($name) {
@@ -150,11 +157,5 @@ class TinyHttp
       }
       throw $e;
     }
-  }
-
-  public function authenticate($user, $pass)
-  {
-    $this->user = $user;
-    $this->pass = $pass;
   }
 }
