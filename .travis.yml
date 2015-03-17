@@ -1,4 +1,8 @@
 language: php
+before_script:
+  - composer install --dev --no-interaction
+script:
+  - ./vendor/bin/phpunit --coverage-clover clover.xml
 php:
   - 5.3
   - 5.4
