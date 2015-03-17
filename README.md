@@ -1,4 +1,6 @@
 # TinyHttp
+[![BuildStatus](https://travis-ci.org/eddiezane/TinyHttp.svg?branch=master)](https://travis-ci.org/eddiezane/TinyHttp)
+
 
 TinyHttp is a very small HTTP wrapper written by [Neuman Vong](https://github.com/luciferous) and the fine folks over at [Twilio](https://twilio.com).
 For more information of its purpose, see [this issue](https://github.com/twilio/twilio-php/issues/214).
@@ -21,7 +23,7 @@ echo $client->get('/v1/gifs/random', null, array('api_key' => 'dc6zaTOxFJmzC'))-
 ## Testing
 
 ``` bash
-$ phpunit
+$ ./vendor/bin/phpunit
 ```
 
 ## Todo
