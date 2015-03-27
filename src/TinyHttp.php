@@ -33,7 +33,7 @@ class TinyHttpException extends \ErrorException {}
  */
 class TinyHttp
 {
-  const VERSION = '0.1.0';
+  const VERSION = '0.2.0';
 
   var $user, $pass, $scheme, $host, $port, $debug, $curlopts;
 

@@ -4,7 +4,7 @@ use \Mockery as m;
 
 class TinyHttpTest extends PHPUnit_Framework_TestCase
 {
-   public $VERSION = '0.1.0';
+   public $VERSION = '0.2.0';
 
     public function tearDown()
     {
